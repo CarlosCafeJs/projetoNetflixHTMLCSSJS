@@ -1,0 +1,749 @@
+/* 
+
+Netflix Red : 
+
+RGB: 229 9 20
+HEX: #E50914
+CMYK: 0 96 93 2
+PMS:  1795 C
+
+Netflix Dark Red
+RGB: 178 7 16
+HEX: #B20710
+CMYK: 18 100 100 10
+PMS:  7627 C
+
+*/
+*, *::after, *::before, *:hover
+{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+:root {
+
+  /* Sessão das Cores  */
+
+  --corPrimaria-Red: #E50914;
+  --corPrimaria-DarkRed: #B20710;
+  --corBasica-Branca: #fff;
+  --corBasica-Branca-Hover:#b8b8b8;
+  --corBasica-Preta: #000;
+  --corBg-Grafite: #1d1d1d;
+
+  /* ----------------------- */
+  
+  /* --sizeMarginTela:92%; */
+  /* --display-size:62vw; */ 
+
+  /* Icone Seta Foto da Conta logada */
+
+  --rem-ico:2rem;
+  --rem-text-um:0.8rem;
+  /*---------------------------------*/
+
+  --buttonsPosition:72vh;   /* Posição top-down Botões "ASSISTIR ~ MAIS INFOS */
+  --em-menos-Um:0.9em; /* Posição do pop-up hover do perfil */
+
+  /* --em-menos-Dois:0.2em; */
+  
+  --emPequeno: 1.5em;
+  --emMedio: 3em;
+  --emGrande: 6em;
+
+  --emPequeno-G: 10em;
+  --emMedio-GG: 20em;
+  --emGrande-XG: 40em;
+
+  --size-svg-em-x:6.7em;
+  --size-svg-em-y:3em;
+
+  --rem-Um: 1.5rem;
+  --rem-Dois: 3rem;
+  --rem-Tres: 6rem;
+  --rem-Quatro: 12rem;
+
+  --remPequeno: 10rem;
+  --remMedio: 30rem;
+  --remGrande: 60rem;
+  --remGrandeMaior: 74rem;
+
+
+  --espacosHeight: 20vh;
+  --espacosWidth: 20vw;
+
+  --layoutSize:92%;
+
+  --multipli-Um: 2;
+  --multipli-Dois: 4;
+  --multipli-Tres: 6;
+  --multipli-Quatro: 8;
+  --multipli-Cinco:12;
+  --multipli-Seis: 14;
+  --multipli-Sete: 16;
+  --multipli-Oito: 18;
+  --multipli-Dez: 24;
+
+
+  --fonteRegular: url('../utilities/fonts/NetflixSans-Regular.otf') format('opentype');
+  --fonteBold: url('../utilities/fonts/NetflixSans-Bold.otf') format('opentype');
+  --fonteLight: url('../utilities/fonts/NetflixSans-Light.otf') format('opentype');
+  --fonteMedium: url('../utilities/fonts/NetflixSans-Medium.otf') format('opentype');
+}
+
+/* -------- CARREGAMENTO DE FONTES PARA UTILIZAÇÃO -------- */
+
+@font-face {
+  font-family: 'NetflixSans-Regular';
+  src: var(--fonteRegular);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NetflixSans-Bold';
+  src: var(--fonteBold);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NetflixSans-Light';
+  src: var(--fonteLight);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NetflixSans-Medium';
+  src: var(--fonteMedium);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* -------- ESTILOS GENÉRICOS CONFIGURAÇÕES PADRÕES -------- */
+
+body {
+
+  font-family:'NetflixSans-Regular', sans-serif;
+  background-color: var(--corBg-Grafite);
+  color: var(--corBg-Grafite);
+
+}
+
+li{
+  list-style: none;
+}
+
+video
+{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+button
+{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+svg
+{
+  fill: var(--corBasica-Branca);
+}
+
+a
+{
+  font-style: none;
+  color: var(--corBasica-Branca);
+}
+
+nav
+{
+  width: 100%;
+}
+.icone-color-svg{
+  fill: var(--corBasica-Branca);
+  transform: scale(1.4);
+  
+}
+
+.icone-color-reverse-svg
+{
+  fill: var(--corBasica-Preta);
+  transform: scale(2);
+}
+
+.transicao
+{
+  /* transition: font-size 0.5s, margin-bottom 0.5s; */
+  transition-duration: 1s;
+}
+
+#menu
+{
+  transition: 0.6s ease;
+}
+
+
+/* -------- CONTEÚDO DETALHADO -------- */
+
+
+
+/* -------- CONFIGURAÇÕES GERAL DA PAGINA NO HEADER -------- */
+
+.general-navegation
+{
+  width: 100%;
+  height: calc(var(--espacosHeight) / var(--multipli-Um));
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
+.gradient-bg
+{
+  background: linear-gradient(to top, transparent, var(--corBasica-Preta));
+}
+
+.black-bg
+{
+  background-color: var(--corBg-Grafite);
+  transition: 0.6s ease;
+  z-index: 99999999;
+  
+}
+
+.general-navegation .inner-navegation
+{
+  width: var(--layoutSize);
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  
+}
+
+/* -------- FIM CONFIGURAÇÕES GERAL DA PAGINA NO HEADER -------- */
+/* -------- FIM CONFIGURAÇÕES GERAL DA PAGINA NO HEADER -------- */
+.background-and-buttons 
+{
+   height: 100vh;
+   display: flex;
+   
+   justify-content: center;
+   align-items: center;
+   
+}
+
+.background-and-buttons .subNavBackground
+{
+  width: 100%;
+   
+}
+
+.background-and-buttons .buttons-controler
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.background-and-buttons .content-container
+{
+  width: 50%;
+  position: absolute;
+  left: 4%;
+  height: 70vh;
+}
+/* -------- FIM CONFIGURAÇÕES GERAL DA PAGINA NO HEADER -------- */
+
+
+
+
+/* -------- MENU NAV PRIMÁRIO -------- */
+
+a .logo-img-nav
+{
+  width: var(--size-svg-em-x);
+  height: var(--size-svg-em-y);
+
+  background-image: url(../media/Img/logo/logo-completa-netflix.png);
+  background-size: cover;
+}
+
+/* -------- FIM MENU NAV PRIMARIO -------- */
+
+
+/* -------- NAV CONFIGS PRIMÁRIO -------- */
+
+.general-navegation .inner-navegation .container-primario-logo
+{
+  display: flex;
+  align-items: center;
+  
+}
+
+
+
+.general-navegation .inner-navegation .container-primario-logo .primary-navegation ul 
+{
+  color: var(--corBasica-Branca);
+  display: flex;
+  gap: var(--emPequeno);
+  margin-left: var(--rem-Dois);
+  font-size: var(--em-menos-Um);
+}
+
+.general-navegation .inner-navegation .container-primario-logo .primary-navegation ul li:hover
+{
+  color: var(--corBasica-Branca-Hover);
+  cursor: pointer;
+  transition: 0.18s;
+  font-family:'NetflixSans-Bold', sans-serif;
+}
+
+/* -------- FIM NAV CONFIGS PRIMÁRIO -------- */
+
+
+/* -------- NAV CONFIGS SECUNDÁRIO -------- */
+
+.general-navegation .inner-navegation .secundary-navegation
+{
+  display: flex;
+  gap:30px;
+}
+
+.general-navegation .inner-navegation .secundary-navegation svg
+{
+  cursor: pointer;
+}
+
+/* -------- imagem profile -------- */
+.containerImageArrow
+{
+  width: calc(var(--rem-ico) * var(--multipli-Um));
+  display: flex;
+
+}
+
+.profile-ico
+{
+  width:var( --rem-ico) ;
+  height: var( --rem-ico) ;
+
+  cursor: pointer;
+}
+.arrow-down-profile
+{
+  display: flex;
+  align-items: center;
+}
+
+.arrow-down-profile svg
+{
+  transform: scale(1);
+  right: var(--em-menos-Dois);
+  fill: var(--corBasica-Branca);
+  display:flex;
+  position: absolute;
+  cursor: pointer;
+}
+/* -------- fim imagem profile -------- */
+
+/* -------- card de profile hover -------- */
+.card-profile
+{
+  width:  220px;
+  height: 380px;
+  display: none;
+  background-color:var(--corBasica-Preta);
+  color: var(--corBasica-Branca);
+  opacity: 0.8;
+  padding: var(--em-menos-Um); 
+
+  position: absolute;
+  top: var(---emMedio);
+  right: var(--em-menos-Um);
+
+  font-size: var(--rem-text-um);
+
+  border-color: var(--corBg-Grafite); 
+  border-style: solid; 
+  margin: var(--em-menos-Dois); 
+  border-width: calc(var(--em-menos-Um) / var(--multipli-Quatro));
+}
+
+.card-profile ul
+{
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--emPequeno) / var(--multipli-Um))
+}
+
+.img-card-Geral
+{
+  width: var( --rem-ico) ;
+  height: var( --rem-ico) ;
+  cursor: pointer;
+}
+#profile-id img
+{
+  width: 100%  ;
+  height: 100% ;
+}
+
+.img-card-Geral img
+{
+  width: 100%  ;
+  height: 100% ;
+}
+
+
+.card-profile ul li
+{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--emPequeno);
+  cursor: pointer;
+
+
+}
+
+
+
+/* -------- fim card de profile hover -------- */
+
+/* -------- BOTÃO SAIR -------- */
+
+
+.container-sair
+{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid ;
+  border-color: #525252; 
+  border-style: solid; 
+  border-width: 0.09em;
+}
+
+/* -------- fim BOTÃO SAIR -------- */
+
+
+/* Classes gerais SubNav - Background */
+
+.bannerBackground
+{
+  position: relative;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  z-index: -1;
+}
+
+.content-sec-navegation
+{
+
+ width: 92%;
+ height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.descText 
+{
+
+  width: 100%;
+  text-align: left;
+  color: var(--corBasica-Branca);
+
+
+}
+
+
+.serie-logo
+{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 8px;
+}
+.logoResume
+{
+  width: 30px;
+  height: 60px;
+  background-image: url(../media/Img/logo/logo-resume.png);
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+}
+
+.logo-img-serie
+{
+  background-image: url(../media/Img/logo/logo-lupin.png);
+  width: 550px;
+  height: 200px;
+
+  background-size: 100% ;
+  background-repeat: no-repeat;
+ 
+}
+.serie-logo
+{
+  color: var(--corBasica-Branca);
+}
+
+.buttons-controler
+{
+  width: 92%;
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  z-index: 9999;
+  top: var(--buttonsPosition);
+  position: absolute;
+  
+}
+
+.buttonsInfoWatch{
+  width: 50%;
+  display: flex;
+  gap:calc(var(--em-menos-Dois) * var(--multipli-Dois));
+
+
+}
+.buttonwatch
+{
+  width: 140px;
+  height: 42px;
+
+  display: flex;
+  gap: 10px;
+  
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: blanchedalmond;
+  color: #000000;
+
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  z-index: 9999998;
+  cursor: pointer;
+ 
+ 
+}
+
+.buttonwatch svg .buttoninfo svg
+{
+  transform: scale(1.7);
+}
+#watchButton
+{
+  z-index: 999999;
+  cursor: pointer;
+ 
+}
+
+
+.buttoninfo
+{
+  width: 200px;
+  height: 42px;
+
+  display: flex;
+  gap: 10px;
+  
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgb(78, 78, 78);
+  color: var(--corBasica-Branca);
+
+  justify-content: center;
+  align-items: center;
+
+
+}
+#infoButton
+{
+  z-index: 999999;
+  cursor: pointer;
+}
+
+
+.button-controler-content-video
+{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.button-controler-content-video video
+{
+
+}
+#botaoSom
+{
+  z-index: 999999;
+  cursor: pointer;
+
+  
+  
+  border: 1px solid #fff;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#iconeSom svg
+{
+  transform: scale(1);
+}
+
+.classificaoIndicativa
+{
+  width: 35px;
+  height: 35px;
+
+}
+
+.classificaoIndicativa img
+{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 10px;
+}
+.containerCITVA
+{
+  width: 50px;
+  height: 35px;
+  position: static;
+}
+.bgCITVA
+{
+  width: 100px;
+  height: 35px;
+  right: -4.3%;
+
+  border-left: 3px solid #fff;
+  position: absolute;
+  background-color: rgba(32, 32, 32, 0.5);
+
+
+
+}
+
+/* main geral  */
+
+.background-main
+{
+  width: 100%;
+  height: 100vh;
+  background-color: var(--mediumColor);
+  position: absolute;
+  top: 650px;
+  
+}
+.degrade-menu
+{
+  width: 100%;
+  height: 30vh;
+
+  background: linear-gradient(to top,var(--mediumColor), transparent);
+  position: absolute;
+  top: -200px;
+}
+
+#containerBackgroundMenu
+{
+  /* z-index: -1; */
+}
+
+.containerCardIniciais
+{
+  height: 200vh;
+  margin: 0% auto;
+  right: 0%;
+
+  z-index: 9999999999;
+
+}
+.containerCarrousel
+{
+  width: 96%;
+  height: 200px;
+  
+  position: absolute;
+  right: 0%;
+
+  display: flex;
+  align-items: center;
+  
+  top: 20vh;
+  overflow: scroll;
+
+  z-index: 9;
+
+
+}
+
+.containerCarrousel::-webkit-scrollbar {
+  background: transparent;
+  width: 0px;
+}
+
+
+
+.containerCarrousel ul
+{
+  display: flex;
+  gap: 4px;
+}
+
+.carrouselList ul li
+{
+  display: flex;
+  gap: 4px;
+  cursor: pointer;
+
+}
+
+.cardCarrousel
+{
+  width: 225px;
+  height: 127px;
+  background-color: #525252;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+
+.backgroundMain
+{
+  width: 100%;
+  height: 30vh;
+
+  position: relative;
+  top: -230px;
+
+  background: linear-gradient(to top,var(--mediumColor), transparent); 
+}
